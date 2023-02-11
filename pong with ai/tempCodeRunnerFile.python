@@ -1,0 +1,37 @@
+import random
+
+# Define the shapes of the Tetris blocks
+shapes = [
+    [[1, 1, 1, 1]],
+    [[1, 1], [1, 1]],
+    [[0, 1, 1], [1, 1, 0]],
+    [[1, 1, 0], [0, 1, 1]],
+    [[0, 1, 0], [1, 1, 1]],
+    [[1, 0, 0], [1, 1, 1]],
+    [[0, 0, 1], [1, 1, 1]]
+]
+
+# Function to rotate the block shape
+def rotate_block(block):
+    return [[block[j][i] for j in range(len(block))] for i in range(len(block[0]) - 1, -1, -1)]
+
+# Function to generate a random block
+def get_random_block():
+    return random.choice(shapes)
+
+# Initialize the game field with empty blocks
+field = [[0 for i in range(10)] for j in range(20)]
+
+# Main game loop
+while True:
+    # Get a random block
+    block = get_random_block()
+
+    # Place the block in the field
+    for i in range(len(block)):
+        for j in range(len(block[i])):
+            if block[i][j]:
+                field[i][j] = 1
+
+    # Rotate the block for the next iteration
+    block = rotate_block(block)

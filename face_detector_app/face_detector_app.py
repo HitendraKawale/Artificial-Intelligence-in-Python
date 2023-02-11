@@ -1,7 +1,7 @@
 import cv2
 
 trained_face_data = cv2.CascadeClassifier('/Users/hitu/Vs_Code/Artificial Intelligence in python/face_detector_app/alg.xml')
-img = cv2.imread('/Users/hitu/Vs_Code/Artificial Intelligence in python/face_detector_app/thor.webp')
+img = cv2.imread('/Users/hitu/Vs_Code/Artificial Intelligence in python/face_detector_app/ppl.jpeg')
 grayscaled_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 
